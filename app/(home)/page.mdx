@@ -1,0 +1,33 @@
+## NO_PROGRESS
+
+<div className="text-secondary mb-4">Last Updated: {new Date().toDateString()}</div>
+
+Inspired by the [`NO_COLOR`](https://no-color.org/) standard, this specification describes a `NO_PROGRESS` standard for disabling command-line spinners and progress bars outputs. While this output can be useful, some terminal outputs do not handle the ANSI escape code sequence (`\033[2K` or `\x1b[2K`) for clearing an entire line. Additionally, tools such as GitHub Workflows cannot handle command-line spinners and progress bars altogether.
+
+As such, the informal standard proposed in 2026 to account for this is thus:
+
+> Command-line software which adds ANSI spinners and/or progress bars to its output by default should check for a `NO_PROGRESS` environment variable that, when present and not an empty string (regardless of its value), prevents the display of ANSI spinners and/or progress bars.
+
+By adopting this standard, environments that require no spinners and/or progress bars can export `NO_PROGRESS=1` to their shell's environment and automatically disable these spinners and progress bars by default in all supported software.
+
+<h3 className="mb-4 mt-5">Example Integration</h3>
+
+```javascript title="example.js"
+// Access the available environment variable.
+const no_progress = process.env.NO_PROGRESS;
+
+// We only enable spinners and progress bars if "undefined" or explicitly "0".
+const enabled = no_progress === undefined || no_progress === '0';
+```
+
+<h3 className="mb-4 mt-5">Adherent Libraries</h3>
+
+Frameworks that currently adhere to the `NO_PROGRESS` standard:
+
+> No libraries so far...
+
+<h3 className="mb-4 mt-5">Adherent Software</h3>
+
+Executables that currently adhere to the `NO_PROGRESS` standard:
+
+> No software so far...
