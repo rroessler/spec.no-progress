@@ -1,0 +1,18 @@
+{
+    "type": "module",
+    "version": "1.0.0",
+    "name": "no-progress",
+    "scripts": {
+        "start": "next dev --turbopack",
+        "serve": "bunx serve -l 3000 out",
+        "bundle": "next build --turbopack"
+    },
+    "dependencies": {
+        "@mdx-js/loader": "^3.1.1",
+        "@mdx-js/react": "^3.1.1",
+        "@next/mdx": "^16.1.6",
+        "@types/mdx": "^2.0.13",
+        "next": "^16.1.6",
+        "react-dom": "^19.2.4"
+    }
+}
