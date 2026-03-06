@@ -6,9 +6,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
         ...components,
 
-        blockquote: ({ ...props }) => <blockquote className="px-4" {...props} />,
-        pre: ({ ...props }) => <pre className="card rounded-top-0 p-3" {...props} />,
-        figcaption: ({ ...props }) => (
+        table: (props) => (
+            <div className="card rounded">
+                <table className="table border-top mt-3" {...props} />
+            </div>
+        ),
+
+        blockquote: (props) => <blockquote className="px-4" {...props} />,
+
+        pre: (props) => <pre className="card rounded-top-0 p-3" {...props} />,
+        figcaption: (props) => (
             <div className="card p-2 border-bottom-0 rounded-bottom-0">
                 <figcaption className="font-monospace" {...props} />
             </div>
