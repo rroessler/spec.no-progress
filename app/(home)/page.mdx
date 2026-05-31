@@ -20,6 +20,12 @@ const no_progress = process.env.NO_PROGRESS;
 const enabled = no_progress === undefined || no_progress === '0';
 ```
 
+<h3 className="mb-4 mt-5">Core Reasoning</h3>
+
+The primary reason for integrating this standard into your libraries and software pertains to accessibility. When spinners and progress bars are present, they disrupt how screen readers parse information which leads to cluttered and confusioning outputs.
+
+This can also lead to issues in non-tty environments (such as outputing to a file, or GitHub Actions), where similarly jumbled outputs occur. By allowing a way to disable spinners and progress bars, this standard provides both a strong case for accessibility and for general development.
+
 <h3 className="mb-4 mt-5">Adherent Libraries</h3>
 
 Frameworks that currently adhere to the `NO_PROGRESS` standard:
